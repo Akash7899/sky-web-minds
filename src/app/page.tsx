@@ -1,9 +1,11 @@
 import ComingSoon from "./pages/ComingSoon/comeingSoon";
+import Header from "./pages/layout/header";
 
 export default function Home() {
   return (
     <>
-      <ComingSoon></ComingSoon>
+      <Header></Header>
+      {/* <ComingSoon></ComingSoon> */}
     </>
   );
 }
