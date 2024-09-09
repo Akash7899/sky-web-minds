@@ -37,7 +37,7 @@ const Header = () => {
                     <div className="flex lg:flex-1">
                         <a href="#" className="-m-1.5 p-1.5">
                             <span className="sr-only">Your Company</span>
-                            <Image src={Logo} width={100} height={100} alt='loog' priority={true} className='h-auto'></Image>
+                            <Image src={Logo} width={50} height={50} alt='loog' priority={true} className='h-auto'></Image>
                         </a>
                     </div>
                     {/* Mobile menu button */}
@@ -101,7 +101,7 @@ const Header = () => {
                             <div className="flex items-center justify-between">
                                 <a href="#" className="-m-1.5 p-1.5">
                                     <span className="sr-only">Your Company</span>
-                                    <Image src={Logo} width={100} height={100} alt='loog' priority={true} className='h-auto' ></Image>
+                                    <Image src={Logo} width={50} height={50} alt='loog' priority={true} className='h-auto' ></Image>
                                 </a>
                                 <button
                                     type="button"
