@@ -19,6 +19,7 @@
     src: url('./fonts/Roboto-Medium.woff') format('woff');
     font-weight: normal;
     font-style: normal;
+    font-display: swap;
 }
 
 
