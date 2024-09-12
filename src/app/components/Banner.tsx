@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import React from 'react';
 // import imge from '../assets/Images/bannerImage/bannerBg.jpg'
 import styles from './banner.module.css'; // Make sure this file exists and contains relevant styles
