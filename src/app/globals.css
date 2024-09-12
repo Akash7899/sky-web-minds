@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
 @font-face {
     font-family: 'RobotRegular';
     src: url('./fonts/Roboto-Regular.woff') format('woff');
@@ -63,3 +65,4 @@ body {
         max-width: 1450px
     }
 }
+
