@@ -31,7 +31,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${robotoRegular.variable} ${robotoBlod.variable}  ${robotoMedium.variable}   antialiased`}
+        className={`${robotoRegular.variable} ${robotoBlod.variable}  ${robotoMedium.variable}`}
       >
         {children}
       </body>
