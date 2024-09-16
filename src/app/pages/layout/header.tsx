@@ -3,6 +3,7 @@ import { useState } from 'react';
 import Image from 'next/image';
 import Logo from '../../assets/Images/webskyminds.png'
 import './header.css'
+import Link from 'next/link';
 
 // Interface for navigation items
 interface NavItem {
@@ -13,9 +14,9 @@ interface NavItem {
 
 const navItems: NavItem[] = [
     { name: 'Home', href: '/' },
-    { name: 'Services', href: '/services', subItems: [{ name: 'HTML', href: '/services/html' }] },
-    { name: 'About Us', href: '/about' },
-    { name: 'Contact Us', href: '/contact' },
+    { name: 'Services', href: '/services', subItems: [{ name: 'HTML', href: '/pages/services/html' }] },
+    { name: 'About Us', href: '/pages/about' },
+    { name: 'Contact Us', href: '/pages/contact' },
 ];
 
 
@@ -37,10 +38,10 @@ const Header = () => {
                 <div className="container mx-auto">
                     <nav className="flex max-w-7xl items-center justify-between pt-4 pb-2" aria-label="Global">
                         <div className="flex lg:flex-1">
-                            <a href="/" className="-m-1.5 p-1.5">
+                            <Link href="/" className="-m-1.5 p-1.5">
                                 <span className="sr-only">Your Company</span>
                                 <Image src={Logo} width={50} height={50} alt='loog' priority={true} className='h-auto'></Image>
-                            </a>
+                            </Link>
                         </div>
                         {/* Mobile menu button */}
                         <div className="flex lg:hidden">
@@ -70,29 +71,26 @@ const Header = () => {
                                             {openDropdownIndex === index && (
                                                 <div className="absolute bg-white shadow-md rounded-lg mt-2">
                                                     {item.subItems.map((subItem) => (
-                                                        <a
-                                                            key={subItem.name}
+                                                        <Link key={subItem.name}
                                                             href={subItem.href}
-                                                            className="block px-4 py-2 text-sm font-semibold text-gray-900 hover:bg-gray-50"
-                                                        >
+                                                            className="block px-4 py-2 text-sm font-semibold text-gray-900 hover:bg-gray-50">
                                                             {subItem.name}
-                                                        </a>
+                                                        </Link>
                                                     ))}
                                                 </div>
                                             )}
                                         </div>
                                     ) : (
-                                        <a href={item.href} className="text-sm font-semibold leading-6 text-gray-900">
+                                        <Link href={item.href} className="text-sm font-semibold leading-6 text-gray-900">
                                             {item.name}
-                                        </a>
+                                        </Link>
+
                                     )}
                                 </div>
                             ))}
                         </div>
                         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-                            <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
-                                Log in <span aria-hidden="true">&rarr;</span>
-                            </a>
+                            <Link href="/pages/login" className="text-sm font-semibold leading-6 text-gray-900">Log in <span aria-hidden="true">&rarr;</span></Link>
                         </div>
                     </nav>
                     {/* Mobile Menu */}
@@ -101,10 +99,11 @@ const Header = () => {
                             <div className="fixed inset-0 z-10"></div>
                             <div className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-[#f2f7fd] p-4 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
                                 <div className="flex items-center justify-between">
-                                    <a href="#" className="-m-1.5 p-1.5">
+                                    <Link href="/" className="-m-1.5 p-1.5">
                                         <span className="sr-only">Your Company</span>
                                         <Image src={Logo} width={50} height={50} alt='loog' priority={true} className='h-auto' ></Image>
-                                    </a>
+                                    </Link>
+
                                     <button
                                         type="button"
                                         className="-m-2.5 rounded-md p-2.5 text-gray-700"
@@ -140,32 +139,25 @@ const Header = () => {
                                                             {openDropdownIndex === index && (
                                                                 <div className="mt-2 space-y-2">
                                                                     {item.subItems.map((subItem) => (
-                                                                        <a
-                                                                            key={subItem.name}
+                                                                        <Link key={subItem.name}
                                                                             href={subItem.href}
-                                                                            className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                                                                        >
-                                                                            {subItem.name}
-                                                                        </a>
+                                                                            className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50">{subItem.name}</Link>
+
                                                                     ))}
                                                                 </div>
                                                             )}
                                                         </>
                                                     ) : (
-                                                        <a
-                                                            href={item.href}
-                                                            className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                                                        >
+                                                        <Link href={item.href} className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
                                                             {item.name}
-                                                        </a>
+                                                        </Link>
                                                     )}
                                                 </div>
                                             ))}
                                         </div>
                                         <div className="py-2">
-                                            <a href="#" className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
-                                                Log in
-                                            </a>
+                                            <Link href="/pages/login" className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Log in <span aria-hidden="true">&rarr;</span></Link>
+
                                         </div>
                                     </div>
                                 </div>
@@ -173,7 +165,7 @@ const Header = () => {
                         </div>
                     )}
                 </div>
-            </header>            
+            </header>
         </>
 
     );

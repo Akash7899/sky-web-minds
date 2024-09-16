@@ -1,11 +1,7 @@
 import React from 'react';
-// import imge from '../assets/Images/bannerImage/bannerBg.jpg'
-import styles from './banner.module.css'; // Make sure this file exists and contains relevant styles
-
+import styles from './banner.module.css';
+import Link from 'next/link';
 const Banner: React.FC = () => {
-    // Use a path relative to the public directory
-    // const BannerImage = '../assets/Images/bannerImage/bannerBg.jpg'; // Ensure this path is correct
-
     return (
         <>
             <div className={styles.backgoundImage}>
@@ -26,29 +22,25 @@ const Banner: React.FC = () => {
                         <div className="hidden sm:mb-8 sm:flex sm:justify-center">
                             <div className="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
                                 sky web minds .{' '}
-                                <a href="#" className="font-semibold text-[#52c3f7]">
+                                <Link href="/pages/about" className="font-semibold text-[#52c3f7]">
                                     <span aria-hidden="true" className="absolute inset-0" />
                                     Read more <span aria-hidden="true">&rarr;</span>
-                                </a>
+                                </Link>
                             </div>
                         </div>
                         <div className="text-center">
                             <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-5xl">
-                            Make dreams come true, take steps towards success.
+                                Make dreams come true, take steps towards success.
                             </h1>
                             <p className="mt-6 text-lg leading-8 text-gray-600">
                                 At Sky Web Minds, we combine innovation with expertise to elevate your online business. Our tailored solutions are designed to meet your unique needs and help you achieve remarkable results in the digital space.
                             </p>
                             <div className="mt-10 flex items-center justify-center gap-x-6">
-                                <a
-                                    href="#"
-                                    className="rounded-md bg-[#52c3f7] px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-[#4291e0] focus:ring-2 focus:ring-[#4291e0] focus-visible:outline-2 focus-visible:outline-offset-2"
-                                >
-                                    Get started
-                                </a>
-                                <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
-                                    Learn more <span aria-hidden="true">→</span>
-                                </a>
+                                <Link href="/pages/about" className="rounded-md bg-[#52c3f7] px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-[#4291e0] focus:ring-2 focus:ring-[#4291e0] focus-visible:outline-2 focus-visible:outline-offset-2"
+                                >Get started</Link>
+
+                                <Link href="/pages/about" className="text-sm font-semibold leading-6 text-gray-900">Learn more <span aria-hidden="true">→</span> </Link>
+
                             </div>
                         </div>
                     </div>
