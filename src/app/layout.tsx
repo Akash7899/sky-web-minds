@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import Header from "./pages/layout/header";
 
 const robotoRegular = localFont({
   src: "./fonts/Roboto-Regular.woff",
@@ -33,6 +34,7 @@ export default function RootLayout({
       <body
         className={`${robotoRegular.variable} ${robotoBlod.variable}  ${robotoMedium.variable}`}
       >
+        <Header></Header>
         {children}
       </body>
     </html>
